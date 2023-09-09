@@ -1,9 +1,11 @@
+//starting off with knowns/made variables, arrays, questions
 var timer = document.querySelector('.countdown');
+var startBtn = document.querySelector('#hoot');
 
 var questions = [
     {
       title: 'What does Pokémon stand for?',
-      choices: ['Poke Mobile', 'Pocket Monsters', 'Pocket Monastery', 'For what is right in the world'],
+      choices: ['Poke Mobile On', 'Pocket Monsters', 'Pocket Monastery', 'For what is right in the world'],
       answer: 'Pocket Monsters',
     },
     {
@@ -29,14 +31,21 @@ var questions = [
     },
     {
       title:
-        'Which type would best to use against a Dark Tera-type Mewtwo?',
+        'Which type would be best to use against a Dark Tera-type Mewtwo?',
       choices: ['Fighting', 'Bug', 'Fairy', 'Poison'],
       answer: 'Bug',
     },
   ];
-
+//just to test how to access
   console.log(questions[1].title);
 
+
+
+//code for clicking start button
+
+
+startBtn.addEventListener("click", function() {
+//code for timer
   function countdown () {
     let timeLeft = 60;
     let timeInterval = setInterval(function () {
@@ -49,5 +58,13 @@ var questions = [
     }, 1000)
 
   };
-
   countdown();
+});
+
+
+
+
+  
+
+
+  

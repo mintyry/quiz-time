@@ -19,8 +19,10 @@ body {
     justify-content: center;
     align-items: center;
     /* outline: green solid 5px; */
-    width: 50%;
-    padding-left: 4%;
+    flex-basis: 100%;
+    /* padding-left: 4%; */
+    padding-left:25%;
+    padding-right: 25%;
 }
 
 #startline{
@@ -30,19 +32,21 @@ body {
     flex-basis: 100%;
     justify-content: center;
     margin-bottom: 2%;
+    text-align: center;
 }
 
 #question {
     font-size: 3vh;
     font-family: 'Courier New', Courier, monospace;
     flex-basis: 100%;
+    text-align: center;
 }
 
 .clock {
     display: flex;
-    justify-content: space-around;
-    display: flex;
-    /* outline: 2px red solid; */
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    /* outline: 5px yellow solid; */
     align-items: center;
 }
 
@@ -50,6 +54,7 @@ button {
     display: flex;
     justify-content: center;
     background-color: transparent;
+    flex-basis:50%;
     /* align-items: center; */
     border: none;
         /* outline: 2px red solid; */
@@ -66,12 +71,16 @@ button {
 }
 
 .countdown {
-    width:32.5%;
-    height:100%;
-    align-items: center;
-    outline: 2px red solid;
-    font-size: 8vh;
-    padding-left: 8%;
-    padding-right: 8%;
+    /* width:30px; */
+
+    /* outline: 2px red solid; */
+    font-size: 10vh;
+    /* padding-left: 3%; */
+    /* padding-right: 8%; */
     color: red;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(35, 35, 35),  rgb(32, 62, 64));
+    border-radius: 360px;
+    font-family:'black ops one';
+    flex-basis:25%;
+    text-align: center;
 }
