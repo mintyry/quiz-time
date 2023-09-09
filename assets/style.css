@@ -10,7 +10,7 @@ body {
     flex-wrap:wrap;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(slategrey,  rgb(32, 62, 64), rgb(26, 38, 39));
+    background-image: linear-gradient(cadetblue,  rgb(32, 62, 64), rgb(26, 38, 39));
 }
 
 .topStart {
@@ -31,13 +31,13 @@ body {
     color:antiquewhite;
     flex-basis: 100%;
     justify-content: center;
-    margin-bottom: 2%;
+    margin-bottom: 4%;
     text-align: center;
 }
 
 #question {
     font-size: 3vh;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: monospace;
     flex-basis: 100%;
     text-align: center;
 }
@@ -83,4 +83,5 @@ button {
     font-family:'black ops one';
     flex-basis:25%;
     text-align: center;
+    margin:auto 5%;
 }
