@@ -40,6 +40,7 @@ body {
     font-family: monospace;
     flex-basis: 100%;
     text-align: center;
+    margin-bottom: 5%;
 }
 
 .clock {
@@ -50,7 +51,7 @@ body {
     align-items: center;
 }
 
-button {
+#surroundHoot {
     display: flex;
     justify-content: center;
     background-color: transparent;
@@ -84,4 +85,14 @@ button {
     flex-basis:25%;
     text-align: center;
     margin:auto 5%;
+}
+
+button {
+    width: 100%;
+    background-color: lightgreen;
+    padding: 10px;
+    border-color: none;
+    border-radius: 360px;
+    border-style: none;
+    margin-bottom: 5%;
 }
