@@ -107,7 +107,6 @@ function nextQuestion() {
 function checkCorrect (x, y) {
   if (x !== y) {
     timeLeft = timeLeft - 10;
-    // listBtn.setAttribute('style','background-color:red');
   };
   nextQuestion();
 };
