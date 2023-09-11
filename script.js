@@ -4,7 +4,11 @@ let startBtn = document.querySelector('#surroundHoot');
 //variables in question/quiz portion
 let quiz = document.querySelector('#question');
 let choiceSection = document.querySelector('#choices');
+let topLine = document.querySelector('#startline');
+
 let currentIndex = 0;
+let timeLeft = 60;
+
 //array of questions and choices
 let questions = [
   {
@@ -48,7 +52,7 @@ console.log(questions[0].answer); //access answer ""
 
 //code for timer
 function countdown() {
-  let timeLeft = 60;
+  // let timeLeft = 60;
   let timeInterval = setInterval(function () {
     timer[0].textContent = timeLeft;
     timer[1].textContent = timeLeft;
@@ -60,6 +64,7 @@ function countdown() {
       timer[1].textContent = 'You\'re done!';
       timer[0].setAttribute('style', 'font-size: 7vh');
       timer[1].setAttribute('style', 'font-size: 6.5vh');
+      showLeaderboard();
     }
   }, 1000)
 };
@@ -81,9 +86,8 @@ function showQuiz() {
     let listBtn = document.createElement('button');
 
     listBtn.textContent = questions[currentIndex].choices[i];
-
     listBtn.onclick = function () {
-      nextQuestion();
+      checkCorrect(questions[currentIndex].choices[i], questions[currentIndex].answer);
     };
     listEl.appendChild(listBtn);
     choiceSection.appendChild(listEl);
@@ -92,11 +96,36 @@ function showQuiz() {
 
 function nextQuestion() {
   currentIndex++;
+  if (currentIndex >= 5) {
+    showLeaderboard();
+  } else {
   showQuiz();
-  
+  }
 };
 
+function checkCorrect (x, y) {
+  if (x !== y) {
+    timeLeft = timeLeft - 10;
+  };
+  nextQuestion();
+};
 
+function showLeaderboard() {
+  topLine.textContent = 'Leaderboard';
+  choiceSection.textContent = '';
+  quiz.textContent = '';
+  let initialsBox = document.createElement('input');
+  initialsBox.setAttribute('type', 'text');
+  initialsBox.setAttribute('placeholder', 'Enter nickname/initials');
+  initialsBox.setAttribute('style', 'font-size: 3vh; padding: 2vh');
+  // initialsBox.setAttribute('placeholder', 'initials');
+  let submitBtn = document.createElement('input');
+  submitBtn.setAttribute('style', 'font-size: 3vh; padding: 2vh; border-radius:100px;');
+  submitBtn.setAttribute('type', 'submit');
+  quiz.appendChild(initialsBox);
+  choiceSection.appendChild(submitBtn);
+
+}
 //code for clicking start button
 //call timer
 //call questions
@@ -108,12 +137,6 @@ startBtn.addEventListener("click", function () {
   startBtn.setAttribute('disabled', true);
 });
 
-// listBtn.addEventListener("click", function() {
-//   if (i >= questions[currentIndex].choices.length) {
-//     quiz.textContent = 'Leaderboards';
-//     choiceSection = 'test name';
-//   }
-// } );
 
 
 
