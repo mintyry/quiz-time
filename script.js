@@ -5,6 +5,7 @@ let startBtn = document.querySelector('#surroundHoot');
 let quiz = document.querySelector('#question');
 let choiceSection = document.querySelector('#choices');
 let topLine = document.querySelector('#startline');
+let scoreShow = document.querySelector('#scores');
 
 let currentIndex = 0;
 let timeLeft = 60;
@@ -57,9 +58,9 @@ function countdown() {
     timer[0].textContent = timeLeft;
     timer[1].textContent = timeLeft;
     timeLeft--;
-    if (timeLeft === 0) {
+    //when time's up or user finishes all questions, time stops and game over messages display
+    if (timeLeft === 0 || currentIndex >= 5) {
       clearInterval(timeInterval);
-      //gonna need a time's up message
       timer[0].textContent = 'Time\'s up!';
       timer[1].textContent = 'You\'re done!';
       timer[0].setAttribute('style', 'font-size: 7vh');
@@ -114,14 +115,19 @@ function showLeaderboard() {
   topLine.textContent = 'Leaderboard';
   choiceSection.textContent = '';
   quiz.textContent = '';
+
+  scoreShow.textContent = 'Your score is ' + timeLeft + '!';
+
+
   let initialsBox = document.createElement('input');
   initialsBox.setAttribute('type', 'text');
   initialsBox.setAttribute('placeholder', 'Enter nickname/initials');
-  initialsBox.setAttribute('style', 'font-size: 3vh; padding: 2vh');
-  // initialsBox.setAttribute('placeholder', 'initials');
+  initialsBox.setAttribute('style', 'font-size: 3vh; padding: 2vh; border-radius:100px; font-family: Bricolage Grotesque');
+
   let submitBtn = document.createElement('input');
-  submitBtn.setAttribute('style', 'font-size: 3vh; padding: 2vh; border-radius:100px;');
+  submitBtn.setAttribute('style', 'font-size: 3vh; padding: 2vh; border-radius:100px; font-family: Bricolage Grotesque');
   submitBtn.setAttribute('type', 'submit');
+
   quiz.appendChild(initialsBox);
   choiceSection.appendChild(submitBtn);
 
