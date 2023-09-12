@@ -6,7 +6,7 @@ let quiz = document.querySelector('#question');
 let choiceSection = document.querySelector('#choices');
 let topLine = document.querySelector('#startline');
 let scoreShow = document.querySelector('#scores');
-let correctShow = document.querySelector('#correct');
+let correctShow = document.querySelector('#correct-and-names');
 
 let currentIndex = 0;
 let timeLeft = 60;
@@ -140,9 +140,18 @@ function showLeaderboard() {
   let submitBtn = document.createElement('input');
   submitBtn.setAttribute('style', 'font-size: 3vh; padding: 2vh; border-radius:100px; font-family: Bricolage Grotesque');
   submitBtn.setAttribute('type', 'submit');
+  // submitBtn.setAttribute('id', 'scores-button');
 
   quiz.appendChild(initialsBox);
   choiceSection.appendChild(submitBtn);
+
+  //might have to be in a function (within this function it's already in)
+  submitBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    let usernames = correctShow.value;
+    localStorage.setItem('myUsername', usernames);
+  })
 
 }
 //code for clicking start button
