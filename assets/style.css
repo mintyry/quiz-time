@@ -51,6 +51,10 @@ body {
     color: yellowgreen;
 }
 
+#correct {
+    font-size: 3vh;
+}
+
 .clock {
     display: flex;
     justify-content: space-evenly;

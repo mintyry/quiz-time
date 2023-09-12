@@ -6,6 +6,7 @@ let quiz = document.querySelector('#question');
 let choiceSection = document.querySelector('#choices');
 let topLine = document.querySelector('#startline');
 let scoreShow = document.querySelector('#scores');
+let correctShow = document.querySelector('#correct');
 
 let currentIndex = 0;
 let timeLeft = 60;
@@ -107,6 +108,15 @@ function nextQuestion() {
 function checkCorrect (x, y) {
   if (x !== y) {
     timeLeft = timeLeft - 10;
+    correctShow.textContent = 'Boo! That ain\'t it!!'
+    correctShow.setAttribute('style', 'color: red');
+  } else {
+    timeLeft++
+    correctShow.textContent = 'Woohoo! You got it!'
+    correctShow.setAttribute('style', 'color: yellowgreen');
+    if (timeLeft > 60) {
+      timeLeft = 60;
+    }
   };
   nextQuestion();
 };
@@ -115,8 +125,11 @@ function showLeaderboard() {
   topLine.textContent = 'Leaderboard';
   choiceSection.textContent = '';
   quiz.textContent = '';
-
-  scoreShow.textContent = 'Your score is ' + timeLeft + '!';
+  let score = timeLeft + 1;
+  if (score > 60) {
+    score = 60;
+  }
+  scoreShow.textContent = 'Your score is ' + score + '!';
 
 
   let initialsBox = document.createElement('input');
