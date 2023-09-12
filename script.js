@@ -125,6 +125,7 @@ function showLeaderboard() {
   topLine.textContent = 'Leaderboard';
   choiceSection.textContent = '';
   quiz.textContent = '';
+
   let score = timeLeft + 1;
   if (score > 60) {
     score = 60;
@@ -145,11 +146,21 @@ function showLeaderboard() {
   quiz.appendChild(initialsBox);
   choiceSection.appendChild(submitBtn);
 
+
   //might have to be in a function (within this function it's already in)
   submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
-    let usernames = correctShow.value;
+    // const newObject = {
+    //   score: score;
+    // }
+
+    console.log(score);
+    
+
+    let showUsername = localStorage.getItem('myUsername')
+    correctShow.textContent = showUsername;
+    let usernames = initialsBox.value;
     localStorage.setItem('myUsername', usernames);
   })
 
