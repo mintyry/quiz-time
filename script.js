@@ -155,13 +155,25 @@ function showLeaderboard() {
     //   score: score;
     // }
 
-    console.log(score);
+   
     
 
-    let showUsername = localStorage.getItem('myUsername')
-    correctShow.textContent = showUsername;
+   
     let usernames = initialsBox.value;
     localStorage.setItem('myUsername', usernames);
+
+    let showUsername = JSON.parse(localStorage.getItem('myUsername')) || [];
+    //we need to parse this, because we want usernames and scores AND SAVE them all, not just overwrite old entries
+
+    //.push keep adding newer entries into array
+
+    showUsername.push(initialsBox.value + ' - ' + score);
+
+    console.log(showUsername);
+
+    correctShow.textContent = showUsername + score;
+
+    submitBtn.setAttribute('disabled', true)
   })
 
 }
