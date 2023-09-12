@@ -7,7 +7,7 @@ let choiceSection = document.querySelector('#choices');
 let topLine = document.querySelector('#startline');
 let scoreShow = document.querySelector('#scores');
 let correctShow = document.querySelector('#correct-and-names');
-let scoresList = document.querySelector('ol');
+
 
 let currentIndex = 0;
 let timeLeft = 60;
@@ -174,15 +174,19 @@ function showLeaderboard() {
 
     localStorage.setItem('myUsername', JSON.stringify(showUsername));
 
+
+    let scoresList = document.createElement('ol');
+
+    correctShow.textContent = '';
+    correctShow.appendChild(scoresList);
+
+
     for (i = 0; i < showUsername.length; i++) {
-     
       let scoresListItem = document.createElement('li');
       scoresListItem.textContent = showUsername[i];
       scoresList.appendChild(scoresListItem);
     }
    
-
-    correctShow.textContent = showUsername;
 
     submitBtn.setAttribute('disabled', true)
   })
