@@ -7,6 +7,7 @@ let choiceSection = document.querySelector('#choices');
 let topLine = document.querySelector('#startline');
 let scoreShow = document.querySelector('#scores');
 let correctShow = document.querySelector('#correct-and-names');
+let scoresList = document.querySelector('ol');
 
 let currentIndex = 0;
 let timeLeft = 60;
@@ -156,11 +157,11 @@ function showLeaderboard() {
     // }
 
    
-    
-
+//getItem (whats in local storage), keep it as array, modify to include current data, set that into local storage
    
-    // let usernames = initialsBox.value;
-    // localStorage.setItem('myUsername', usernames);
+
+    //  let usernames = initialsBox.value;
+    //  localStorage.setItem('myUsername', usernames);
 
 
     let showUsername = JSON.parse(localStorage.getItem('myUsername')) || [];
@@ -173,6 +174,12 @@ function showLeaderboard() {
 
     localStorage.setItem('myUsername', JSON.stringify(showUsername));
 
+    for (i = 0; i < showUsername.length; i++) {
+     
+      let scoresListItem = document.createElement('li');
+      scoresListItem.textContent = showUsername[i];
+      scoresList.appendChild(scoresListItem);
+    }
    
 
     correctShow.textContent = showUsername;
