@@ -7,6 +7,7 @@ let choiceSection = document.querySelector('#choices');
 let topLine = document.querySelector('#startline');
 let scoreShow = document.querySelector('#scores');
 let correctShow = document.querySelector('#correct-and-names');
+let timeInterval;
 
 
 let currentIndex = 0;
@@ -56,17 +57,13 @@ console.log(questions[0].answer); //access answer ""
 //code for timer
 function countdown() {
   // let timeLeft = 60;
-  let timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     timer[0].textContent = timeLeft;
     timer[1].textContent = timeLeft;
     timeLeft--;
     //when time's up or user finishes all questions, time stops and game over messages display
     if (timeLeft === 0 || currentIndex >= 5) {
-      clearInterval(timeInterval);
-      timer[0].textContent = 'Time\'s up!';
-      timer[1].textContent = 'You\'re done!';
-      timer[0].setAttribute('style', 'font-size: 7vh');
-      timer[1].setAttribute('style', 'font-size: 6.5vh');
+    
       showLeaderboard();
     }
   }, 1000)
@@ -109,6 +106,11 @@ function nextQuestion() {
 function checkCorrect (x, y) {
   if (x !== y) {
     timeLeft = timeLeft - 10;
+    if (timeLeft <= 0) {
+      timeLeft = 0;
+      timer[0].textContent = timeLeft;
+      timer[1].textContent = timeLeft;
+    }
     correctShow.textContent = 'Boo! That ain\'t it!!'
     correctShow.setAttribute('style', 'color: red');
   } else {
@@ -123,6 +125,12 @@ function checkCorrect (x, y) {
 };
 
 function showLeaderboard() {
+  clearInterval(timeInterval);
+  timer[0].textContent = 'Time\'s up!';
+  timer[1].textContent = 'You\'re done!';
+  timer[0].setAttribute('style', 'font-size: 7vh');
+  timer[1].setAttribute('style', 'font-size: 6.5vh');
+
   topLine.textContent = 'Leaderboard';
   choiceSection.textContent = '';
   quiz.textContent = '';
@@ -169,21 +177,26 @@ function showLeaderboard() {
     //we need to parse this, because we want usernames and scores AND SAVE them all, not just overwrite old entries
 
     //.push keep adding newer entries into array
-
-    showUsername.push(initialsBox.value + ' - ' + score);
+    let newScore = {
+      initials: initialsBox.value,
+      score: score
+    }
+    showUsername.push(newScore);
+    showUsername.sort(function(a , b){
+      return b.score-a.score;
+    })
 
     localStorage.setItem('myUsername', JSON.stringify(showUsername));
 
 
     let scoresList = document.createElement('ol');
-
     correctShow.textContent = '';
     correctShow.appendChild(scoresList);
 
 
     for (i = 0; i < showUsername.length; i++) {
       let scoresListItem = document.createElement('li');
-      scoresListItem.textContent = showUsername[i];
+      scoresListItem.textContent = showUsername[i].initials + ' - ' + showUsername[i].score;
       scoresList.appendChild(scoresListItem);
     }
    
@@ -207,6 +220,6 @@ startBtn.addEventListener("click", function () {
 
 
 
-
+//ask Meg: form element to input box; how to sort or organize scores by highest number
 
 
