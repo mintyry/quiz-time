@@ -194,7 +194,7 @@ function showLeaderboard() {
     let scoresList = document.createElement('ol');
     correctShow.textContent = '';
     correctShow.appendChild(scoresList);
-    correctShow.setAttribute('style', 'color: antiquewhite; height: 300px; overflow: scroll; overflow-x: visible; padding-left: 50px;');
+    correctShow.setAttribute('style', 'color: antiquewhite; height: 20%; overflow: scroll; overflow-x: visible; padding-left: 50px; margin: 3% auto');
 
     for (i = 0; i < showUsername.length; i++) {
       let scoresListItem = document.createElement('li');
