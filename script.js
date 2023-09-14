@@ -162,7 +162,7 @@ function showLeaderboard() {
     event.preventDefault();
 
     if (initialsBox.value === '') {
-      alert("Input cannot be blank.\nPlease enter initials or nickname.");
+      return alert("Input cannot be blank.\nPlease enter initials or nickname.");
       
     } 
     // correctShow.setAttribute('style', 'color: antiquewhite; height:300px; overflow:hidden; overflow:scroll;');
