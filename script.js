@@ -160,6 +160,8 @@ function showLeaderboard() {
   submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
+    // choiceSection.setAttribute('style', 'color: antiquewhite; overflow:scroll');
+
     // const newObject = {
     //   score: score;
     // }
@@ -201,7 +203,14 @@ function showLeaderboard() {
     }
    
 
-    submitBtn.setAttribute('disabled', true)
+    submitBtn.setAttribute('style', 'display: none');
+
+    let restartBtn = document.createElement('button');
+    restartBtn.setAttribute('style', ' width: 100%; background-color: #d0d0d0; color: black; padding: 10px; border-color: none; border-radius: 360px; border-style: none; margin-bottom: 5%; box-shadow: 2px 5px; margin: 1% auto 3%;');
+    restartBtn.setAttribute('onClick', 'window.location.reload()')
+    restartBtn.textContent = 'Try again?';
+    choiceSection.appendChild(restartBtn);
+
   })
 
 }
@@ -221,5 +230,6 @@ startBtn.addEventListener("click", function () {
 
 
 //ask Meg: form element to input box; how to sort or organize scores by highest number
+//todo: create restart button, criteria for initials, hover for multiple choices
 
 

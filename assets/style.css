@@ -109,3 +109,8 @@ button {
     border-style: none;
     margin-bottom: 5%;
 }
+
+/* button:hover {
+    text-shadow: 0 0 20px #9afe89;
+    transition:all ease-in 0.2s;
+} */
