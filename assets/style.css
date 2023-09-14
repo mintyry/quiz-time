@@ -33,6 +33,7 @@ body {
     /* padding-left: 4%; */
     padding-left:25%;
     padding-right: 25%;
+    margin-top: 1%;
 }
 
 #startline{
@@ -71,6 +72,7 @@ body {
     flex-basis: 100%;
     /* outline: 5px yellow solid; */
     align-items: center;
+    margin-bottom: 3%;
 }
 
 #surroundHoot {
@@ -109,7 +111,7 @@ body {
     margin:auto 5%;
 }
 
-button {
+.choicebutton {
     width: 100%;
     background-color: cadetblue;
     color: antiquewhite;
@@ -118,9 +120,11 @@ button {
     border-radius: 360px;
     border-style: none;
     margin-bottom: 5%;
+    transition: all 0.2s ease-in-out;
 }
 
-/* button:hover {
-    text-shadow: 0 0 20px #9afe89;
-    transition:all ease-in 0.2s;
-} */
+.choicebutton:hover {
+    box-shadow: inset 0px 0px 8px white, 0 0 15px rgb(139, 230, 183);
+}
+
+

@@ -84,6 +84,7 @@ function showQuiz() {
 
     let listEl = document.createElement('li');
     let listBtn = document.createElement('button');
+    listBtn.setAttribute('class', 'choicebutton');
 
     listBtn.textContent = questions[currentIndex].choices[i];
     listBtn.onclick = function () {
@@ -135,7 +136,7 @@ function showLeaderboard() {
   choiceSection.textContent = '';
   quiz.textContent = '';
 
-  let score = timeLeft + 1;
+  let score = timeLeft;
   if (score > 60) {
     score = 60;
   }
