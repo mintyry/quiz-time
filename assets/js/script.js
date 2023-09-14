@@ -61,9 +61,9 @@ function countdown() {
   timer[0].textContent = timeLeft;
   timer[1].textContent = timeLeft;
   timeInterval = setInterval(function () {
+    timeLeft--;
     timer[0].textContent = timeLeft;
     timer[1].textContent = timeLeft;
-    timeLeft--;
     /* when time's up or user finishes all questions, showLeaderboard() will run, which will immediately stop timer. Placing clearInterval at the top
     solved the issue of the clock still running for a nanosecond even though quiz is over */
     if (timeLeft < 0 || currentIndex >= 5) {
