@@ -1,18 +1,20 @@
+/* as explained by learning assistant, :root essentially targets the html tag/element in the html file;
+setting these background properties in here will apply to the whole page, solving the problem
+of any content overflowing the body and going out of the bounds of the background gradient. */
 :root {
     background: linear-gradient(cadetblue,  rgb(32, 62, 64), rgb(26, 38, 39));
     background-size: cover;
     background-repeat: no-repeat;
 }
 
+/* universal; applies to every element */
 * {
     font-family: 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* outline: 2px red solid; */
 }
 
-
-
+/* applying flex properties to make page responsive */
 body {
     display:flex;
     flex-wrap:wrap;
@@ -23,14 +25,13 @@ body {
   background-repeat: no-repeat;
 }
 
+/* positioning the entire top section which holds the starter line of text along with questions and eventually user's final score */
 .topStart {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    /* outline: green solid 5px; */
     flex-basis: 100%;
-    /* padding-left: 4%; */
     padding-left:25%;
     padding-right: 25%;
     margin-top: 1%;
@@ -62,55 +63,7 @@ body {
     color: yellowgreen;
 }
 
-#correct-and-names {
-    font-size: 3vh;
-}
-
-.clock {
-    display: flex;
-    justify-content: space-evenly;
-    flex-basis: 100%;
-    /* outline: 5px yellow solid; */
-    align-items: center;
-    margin-bottom: 3%;
-}
-
-#surroundHoot {
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    flex-basis:50%;
-    /* align-items: center; */
-    border: none;
-        /* outline: 2px red solid; */
-}
-
-#hoot {
-    /* outline: teal 2px solid; */
-    width: 50%;
-    border-radius: 360px;
-}
-
-#hoot:hover, button:hover  {
-    cursor: pointer;
-}
-
-.countdown {
-    /* width:30px; */
-    /* height:20vh; */
-    /* outline: 2px red solid; */
-    font-size: 10vh;
-    /* padding-left: 3%; */
-    /* padding-right: 8%; */
-    color: red;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(35, 35, 35),  rgb(32, 62, 64));
-    border-radius: 360px;
-    font-family:'black ops one';
-    flex-basis:25%;
-    text-align: center;
-    margin:auto 5%;
-}
-
+/* these are the styles for the multiple choice buttins that will populate for quiz */
 .choicebutton {
     width: 100%;
     background-color: cadetblue;
@@ -127,4 +80,43 @@ body {
     box-shadow: inset 0px 0px 8px white, 0 0 15px rgb(139, 230, 183);
 }
 
+/* will display if user is correct or not, along with the list of scores in the leaderboard */
+#correct-and-names {
+    font-size: 3vh;
+}
 
+/* this section contains styling for start button and timers */
+.clock {
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 100%;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+#surroundHoot {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    flex-basis:50%;
+    border: none;
+}
+
+#hoot {
+    width: 50%;
+    border-radius: 360px;
+}
+#hoot:hover, button:hover  {
+    cursor: pointer;
+}
+
+.countdown {
+    font-size: 10vh;
+    color: red;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(35, 35, 35),  rgb(32, 62, 64));
+    border-radius: 360px;
+    font-family:'black ops one';
+    flex-basis:25%;
+    text-align: center;
+    margin:auto 5%;
+}
