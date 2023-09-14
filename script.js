@@ -56,13 +56,14 @@ console.log(questions[0].answer); //access answer ""
 
 //code for timer
 function countdown() {
-  // let timeLeft = 60;
+    timer[0].textContent = timeLeft;
+    timer[1].textContent = timeLeft;
   timeInterval = setInterval(function () {
     timer[0].textContent = timeLeft;
     timer[1].textContent = timeLeft;
     timeLeft--;
     //when time's up or user finishes all questions, time stops and game over messages display
-    if (timeLeft === 0 || currentIndex >= 5) {
+    if (timeLeft < 0 || currentIndex >= 5) {
     
       showLeaderboard();
     }
@@ -139,7 +140,10 @@ function showLeaderboard() {
   let score = timeLeft;
   if (score > 60) {
     score = 60;
-  }
+  } else if (score < 0) {
+    score = 0;
+  };
+
   scoreShow.textContent = 'Your score is ' + score + '!';
 
 
@@ -155,6 +159,7 @@ function showLeaderboard() {
 
   quiz.appendChild(initialsBox);
   choiceSection.appendChild(submitBtn);
+  
 
 
   //might have to be in a function (within this function it's already in)
@@ -165,6 +170,8 @@ function showLeaderboard() {
       return alert("Input cannot be blank.\nPlease enter initials or nickname.");
       
     } 
+
+    
     // correctShow.setAttribute('style', 'color: antiquewhite; height:300px; overflow:hidden; overflow:scroll;');
 
     // const newObject = {
@@ -216,6 +223,19 @@ function showLeaderboard() {
     restartBtn.textContent = 'Try again?';
     choiceSection.appendChild(restartBtn);
 
+    function clearScores() {
+      localStorage.clear();
+      choiceSection.setAttribute = '';
+    }
+   
+    let clearBtn = document.createElement('button');
+    clearBtn.setAttribute('style', ' width: 100%; background-color: #d0d0d0; color: black; padding: 10px; border-color: none; border-radius: 360px; border-style: none; margin-bottom: 5%; box-shadow: 2px 5px; margin: 1% auto 3%;');
+    clearBtn.setAttribute('onClick', 'clearScores();')
+    clearBtn.textContent = 'Wipe out scores';
+    choiceSection.appendChild(clearBtn);
+
+   
+
   })
 
 }
@@ -234,7 +254,7 @@ startBtn.addEventListener("click", function () {
 
 
 
-//ask Meg: form element to input box; how to sort or organize scores by highest number
+//ask Meg: why the second discrepancy // clearing scores 226
 //todo: create restart button, criteria for initials, hover for multiple choices
 
 
