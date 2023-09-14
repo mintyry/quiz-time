@@ -8,30 +8,47 @@ If they answer incorrectly, time is deducted, so essentially their time remainin
 
 At the end, a Leaderboard page will display, asking the user to enter their nickname or initials to include their score on the leaderboard, which will then display their score ranked amongst previous player scores.
 
-I was movivated to do this, because it was a great exercise in utilizing JavaScript and furthering it to access the DOM. Beyond that, learning to create more dynamic functions within the DOM allowed me to delve into utilizing local storage
+I was movivated to do this, because it was a great exercise in utilizing JavaScript and furthering it to access the DOM. Beyond that, learning to create more dynamic functions within the DOM allowed me to delve into utilizing local storage to retain previous data and add onto it. This will be undoubtedly helpful in other facets of building applications.
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+The local storage aspect solves the issue of saved data being lost once the page refreshes.
+Also, the clear button solves the issue of saved data being too long.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+I learned that scope and placement matters very much. I already knew this, but learned more specifically in every little instance of trying to get something to work properly. Sometimes code can be broken even if you have the correct codes written in, but one line happens to be above or below where it should ideally be, and it's can make the biggest difference. I also learned a lot about localStorage in how getItem and setItem relate to each other and why we would need to getItem before setting it in terms of the data types they pull (strings vs arrays vs objects).
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+n/a
 
 ## Usage
 
+Upon landing on quiz page, user will be presented with quiz instructions and a start button (the Pokemon circle at the bottom).
+User just needs to click the start button to begin.
+
+![Click the Hoothoot start button to begin quiz!](assets/images/quiz-question.png)
+
+Then, user can hover over the answer of their choice; the choice they hover over will glow to help indicate that's what they are clicking.
+Once user clicks, it will lead to the next question.
+
+![Click to choose answer and move on to next question](assets/images/quiz-question.png)
+
+Depending on choice, user will receive a message declaring they were correct or incorrect.
+Correct answers reward user plus one second (for a maximum total score of 60),
+and incorrect answers penalize user with a 10-second deduction.
+
+![Correct answer message](assets//images/resultofchoice.png)
+![Incorrect answer choice](assets/images/negativeresult.png)
+
+Once the time is up or the user has answered all five questions, the quiz will finish, display a game over message, and the leaderboards page will load up, allowing for user to input their name, which will display among prior entries in a list below. 
+
+If user does not enter a name or initials in the input box, they will be prompted to and cannot move on until it is done.
+
+![Enter name alert](assets/images/alertname.png)
+
+The leaderboard is ranked from highest score to lowest.
+
+After submitting entry, user can restart the game or even wipe the leaderboard list at the click of a button.
+
+![Leaderboard](assets/images/leaderboard.png)
 Provide instructions and examples for use. Include screenshots as needed.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
@@ -40,34 +57,10 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+TA - Meg Meyers: helped with code to rank scores in leaderboard from highest score to lowest
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Learning Assistant Mia D.: helped with creating getItem and setItem process
 
-If you followed tutorials, include links to those here as well.
+Learning Assistant Alex B.: helped with background gradient and using :root
 
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't necessary, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute to it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+MDN: https://www.w3schools.com/jsref/met_storage_clear.asp
