@@ -5,12 +5,16 @@
     /* outline: 2px red solid; */
 }
 
+
+
 body {
     display:flex;
     flex-wrap:wrap;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(cadetblue,  rgb(32, 62, 64), rgb(26, 38, 39));
+    background: linear-gradient(cadetblue,  rgb(32, 62, 64), rgb(26, 38, 39));
+    background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .topStart {

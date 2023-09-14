@@ -160,7 +160,7 @@ function showLeaderboard() {
   submitBtn.addEventListener('click', function (event) {
     event.preventDefault();
 
-    // choiceSection.setAttribute('style', 'color: antiquewhite; overflow:scroll');
+    // correctShow.setAttribute('style', 'color: antiquewhite; height:300px; overflow:hidden; overflow:scroll;');
 
     // const newObject = {
     //   score: score;
@@ -194,7 +194,7 @@ function showLeaderboard() {
     let scoresList = document.createElement('ol');
     correctShow.textContent = '';
     correctShow.appendChild(scoresList);
-
+    correctShow.setAttribute('style', 'color: antiquewhite; height: 300px; overflow: scroll; overflow-x: visible; padding-left: 50px;');
 
     for (i = 0; i < showUsername.length; i++) {
       let scoresListItem = document.createElement('li');
