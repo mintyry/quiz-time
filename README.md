@@ -52,7 +52,7 @@ After submitting entry, user can restart the game or even wipe the leaderboard l
 
 ## Credits
 
-TA - Meg Meyers: helped with code to rank scores in leaderboard from highest score to lowest
+TA - Meg M.: helped with code to rank scores in leaderboard from highest score to lowest
 
 Learning Assistant Mia D.: helped with creating getItem and setItem process
 

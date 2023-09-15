@@ -59,13 +59,12 @@ console.log(questions[0].answer); //access answer ""
 
 //code for timer
 function countdown() {
-    timer[0].textContent = timeLeft;
-    timer[1].textContent = timeLeft;
+  timer[0].textContent = timeLeft;
+  timer[1].textContent = timeLeft;
   timeInterval = setInterval(function () {
     timeLeft--;
     timer[0].textContent = timeLeft;
     timer[1].textContent = timeLeft;
-    
     /* when time's up or user finishes all questions, showLeaderboard() will run, which will immediately stop timer. Placing clearInterval at the top
     solved the issue of the clock still running for a nanosecond even though quiz is over */
     if (timeLeft <= 0 || currentIndex >= 5) {
@@ -118,6 +117,8 @@ function nextQuestion() {
 function checkCorrect(x, y) {
   if (x !== y) {
     timeLeft = timeLeft - 10;
+    timer[0].textContent = timeLeft;
+    timer[1].textContent = timeLeft;
     if (timeLeft <= 0) {
       timeLeft = 0;
       timer[0].textContent = timeLeft;
@@ -232,7 +233,7 @@ function showLeaderboard() {
     restartBtn.setAttribute('onClick', 'window.location.reload()')
     restartBtn.textContent = 'Try again?';
     choiceSection.appendChild(restartBtn);
-
+    
     //creates clear scores button
     let clearBtn = document.createElement('button');
     clearBtn.setAttribute('style', ' width: 100%; background-color: #d0d0d0; color: black; padding: 10px; border-color: none; border-radius: 360px; border-style: none; margin-bottom: 5%; box-shadow: 2px 5px; margin: 1% auto 3%;');
@@ -250,6 +251,3 @@ startBtn.addEventListener("click", function () {
   // after running those functions, the button becomes disabled
   startBtn.setAttribute('disabled', true);
 });
-
-
-//ask Meg: why the second discrepancy // clearing scores 227 //fix scroll
