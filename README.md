@@ -15,7 +15,7 @@ Also, the clear button solves the issue of saved data being too long.
 
 I learned that scope and placement matters very much. I already knew this, but learned more specifically in every little instance of trying to get something to work properly. Sometimes code can be broken even if you have the correct codes written in, but one line happens to be above or below where it should ideally be, and it can make the biggest difference. I also learned a lot about localStorage in how getItem and setItem relate to each other and why we would need to getItem before setting it in terms of the data types they pull (strings vs arrays vs objects).
 
-Please enjoy this quiz game at the [deployed URL](url).
+Please enjoy this quiz game at the [deployed URL](https://mintyry.github.io/quiz-time/).
 
 ## Installation
 
