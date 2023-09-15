@@ -38,7 +38,7 @@ and incorrect answers penalize user with a 10-second deduction.
 ![Correct answer message](assets//images/resultofchoice.png)
 ![Incorrect answer choice](assets/images/negativeresult.png)
 
-Once the time is up or the user has answered all five questions, the quiz will finish, display a game over message, and the leaderboards page will load up, allowing for user to input their name, which will display among prior entries in a list below. 
+Once the time is up or the user has answered all five questions, the quiz will finish, display a game-over message, and the leaderboards page will load up, allowing for user to input their name, which will display among prior entries in a list below. 
 
 If user does not enter a name or initials in the input box, they will be prompted to and cannot move on until it is done.
 
