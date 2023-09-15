@@ -2,7 +2,7 @@
 setting these background properties in here will apply to the whole page, solving the problem
 of any content overflowing the body and going out of the bounds of the background gradient. */
 :root {
-    background: linear-gradient(cadetblue,  rgb(32, 62, 64), rgb(26, 38, 39));
+    background: linear-gradient(cadetblue, rgb(32, 62, 64), rgb(26, 38, 39));
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -16,13 +16,13 @@ of any content overflowing the body and going out of the bounds of the backgroun
 
 /* applying flex properties to make page responsive */
 body {
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(cadetblue,  rgb(32, 62, 64), rgb(26, 38, 39));
+    background: linear-gradient(cadetblue, rgb(32, 62, 64), rgb(26, 38, 39));
     background-size: cover;
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 /* positioning the entire top section which holds the starter line of text along with questions and eventually user's final score */
@@ -32,15 +32,15 @@ body {
     justify-content: center;
     align-items: center;
     flex-basis: 100%;
-    padding-left:25%;
+    padding-left: 25%;
     padding-right: 25%;
     margin-top: 1%;
 }
 
-#startline{
+#startline {
     font-size: 5vh;
     font-family: 'Pacifico', cursive;
-    color:antiquewhite;
+    color: antiquewhite;
     flex-basis: 100%;
     justify-content: center;
     margin-bottom: 4%;
@@ -98,7 +98,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: transparent;
-    flex-basis:50%;
+    flex-basis: 50%;
     border: none;
 }
 
@@ -106,17 +106,19 @@ body {
     width: 50%;
     border-radius: 360px;
 }
-#hoot:hover, button:hover  {
+
+#hoot:hover,
+button:hover {
     cursor: pointer;
 }
 
 .countdown {
     font-size: 10vh;
     color: red;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(35, 35, 35),  rgb(32, 62, 64));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(35, 35, 35), rgb(32, 62, 64));
     border-radius: 360px;
-    font-family:'black ops one';
-    flex-basis:25%;
+    font-family: 'black ops one';
+    flex-basis: 25%;
     text-align: center;
-    margin:auto 5%;
+    margin: auto 5%;
 }

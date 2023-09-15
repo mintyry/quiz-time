@@ -153,7 +153,7 @@ function showLeaderboard() {
   timer[0].setAttribute('style', 'font-size: 7vh');
   timer[1].setAttribute('style', 'font-size: 6.5vh');
 
-//actual leaderboard populates
+  //actual leaderboard populates
   topLine.textContent = 'Leaderboard';
   choiceSection.textContent = '';
   quiz.textContent = '';
@@ -233,7 +233,7 @@ function showLeaderboard() {
     restartBtn.setAttribute('onClick', 'window.location.reload()')
     restartBtn.textContent = 'Try again?';
     choiceSection.appendChild(restartBtn);
-    
+
     //creates clear scores button
     let clearBtn = document.createElement('button');
     clearBtn.setAttribute('style', ' width: 100%; background-color: #d0d0d0; color: black; padding: 10px; border-color: none; border-radius: 360px; border-style: none; margin-bottom: 5%; box-shadow: 2px 5px; margin: 1% auto 3%;');
