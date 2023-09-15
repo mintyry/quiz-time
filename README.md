@@ -54,14 +54,14 @@ After submitting entry, user can restart the game or even wipe the leaderboard l
 
 ## Credits
 
-TA - Meg M.: helped with code to rank scores in leaderboard from highest score to lowest; also helped with changing array syntax to object syntax.
+TA - Meg M.: helped with code to rank scores in leaderboard from highest score to lowest; also helped with changing array syntax to object syntax.<br>
     (script.js - lines 204-211)
 
-Learning Assistant Mia D.: helped with creating getItem and setItem process
+Learning Assistant Mia D.: helped with creating getItem and setItem process<br>
     (script.js - lines 198 & 213)
 
-Learning Assistant Alex B.: helped with background gradient and using :root
+Learning Assistant Alex B.: helped with background gradient and using :root<br>
     (style.css line 4)
 
-W3Schools: [Clearing Local Storage](https://www.w3schools.com/jsref/met_storage_clear.asp)
+W3Schools: [Clearing Local Storage](https://www.w3schools.com/jsref/met_storage_clear.asp)<br>
     (script.js lines 142 and 240)
