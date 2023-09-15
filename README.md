@@ -1,4 +1,4 @@
-# quiz-time A Quiz About Pokémon!
+# Quiz-Time: A Quiz About Pokémon!
 
 ## Description
 
@@ -13,7 +13,7 @@ I was movivated to do this, because it was a great exercise in utilizing JavaScr
 The local storage aspect solves the issue of saved data being lost once the page refreshes.
 Also, the clear button solves the issue of saved data being too long.
 
-I learned that scope and placement matters very much. I already knew this, but learned more specifically in every little instance of trying to get something to work properly. Sometimes code can be broken even if you have the correct codes written in, but one line happens to be above or below where it should ideally be, and it's can make the biggest difference. I also learned a lot about localStorage in how getItem and setItem relate to each other and why we would need to getItem before setting it in terms of the data types they pull (strings vs arrays vs objects).
+I learned that scope and placement matters very much. I already knew this, but learned more specifically in every little instance of trying to get something to work properly. Sometimes code can be broken even if you have the correct codes written in, but one line happens to be above or below where it should ideally be, and it can make the biggest difference. I also learned a lot about localStorage in how getItem and setItem relate to each other and why we would need to getItem before setting it in terms of the data types they pull (strings vs arrays vs objects).
 
 ## Installation
 
@@ -58,4 +58,4 @@ Learning Assistant Mia D.: helped with creating getItem and setItem process
 
 Learning Assistant Alex B.: helped with background gradient and using :root
 
-MDN: https://www.w3schools.com/jsref/met_storage_clear.asp
+W3Schools: [Clearing Local Storage](https://www.w3schools.com/jsref/met_storage_clear.asp)
