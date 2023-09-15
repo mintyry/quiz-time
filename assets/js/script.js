@@ -248,6 +248,6 @@ function showLeaderboard() {
 startBtn.addEventListener("click", function () {
   countdown();
   showQuiz();
-  // after running those functions, the button becomes disabled
+  // after running those functions, the button becomes disabled; in other words, once clicked to start, it is unclickable.
   startBtn.setAttribute('disabled', true);
 });
