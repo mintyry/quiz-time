@@ -26,7 +26,7 @@ n/a
 Upon landing on quiz page, user will be presented with quiz instructions and a start button (the Pokemon circle at the bottom).
 User just needs to click the start button to begin.
 
-![Click the Hoothoot start button to begin quiz!](assets/images/quiz-question.png)
+![Click the Hoothoot start button to begin quiz!](assets/images/pokemon-quiz.png)
 
 Then, user can hover over the answer of their choice; the choice they hover over will glow to help indicate that's what they are clicking.
 Once user clicks, it will lead to the next question.
